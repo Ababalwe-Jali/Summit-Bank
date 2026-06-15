@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Summit Bank - Banking with Care. Premium financial services for personal, business, and institutional clients across the UAE and beyond.">
+    <title>Summit Bank | Banking with Care</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body>
+    <!-- Notification Bar -->
+<div id="notif-bar" class="notification-bar">
+  📢 New: Instant digital account opening — open your account in 5 minutes.
+  <a href="#" onclick="showPage('accounts')">Get started</a>
+  <span class="close-notif" onclick="document.getElementById('notif-bar').remove()">✕</span>
+</div>
+ 
+<!-- Navigation -->
+<nav id="main-nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#" onclick="showPage('home')" class="nav-logo">
+        <img src="../img/logo1.png" alt="Summit Bank Logo" class="nav-logo-img">
+      </a>
+      <ul class="nav-links">
+        <li class="nav-item">
+          <a href="#" class="nav-link" onclick="showPage('accounts')">Accounts
+            <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg>
+          </a>
+          <div class="nav-dropdown">
+            <a href="#" onclick="showPage('accounts')">Personal Accounts</a>
+            <a href="#" onclick="showPage('accounts')">Business Accounts</a>
+            <a href="#" onclick="showPage('accounts')">Current Account</a>
+            <a href="#" onclick="showPage('accounts')">Savings Account</a>
+            <a href="#" onclick="showPage('accounts')">Fixed Deposits</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link" onclick="showPage('cards')">Cards
+            <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg>
+          </a>
+          <div class="nav-dropdown">
+            <a href="#" onclick="showPage('cards')">Credit Cards</a>
+            <a href="#" onclick="showPage('cards')">Debit Cards</a>
+            <a href="#" onclick="showPage('cards')">Prepaid Cards</a>
+            <a href="#" onclick="showPage('cards')">Business Cards</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link" onclick="showPage('loans')">Loans
+            <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg>
+          </a>
+          <div class="nav-dropdown">
+            <a href="#" onclick="showPage('loans')">Personal Loan</a>
+            <a href="#" onclick="showPage('loans')">Home Finance</a>
+            <a href="#" onclick="showPage('loans')">Auto Loan</a>
+            <a href="#" onclick="showPage('loans')">Business Loan</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link" onclick="showPage('forex')">Foreign Exchange</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link" onclick="showPage('wealth')">Wealth & Insurance
+            <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg>
+          </a>
+          <div class="nav-dropdown">
+            <a href="#" onclick="showPage('wealth')">Investment Services</a>
+            <a href="#" onclick="showPage('wealth')">Private Banking</a>
+            <a href="#" onclick="showPage('wealth')">Insurance Solutions</a>
+            <a href="#" onclick="showPage('wealth')">Wealth Planning</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link" onclick="showPage('ways')">Ways of Banking</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link" onclick="showPage('corporate')">Corporate</a>
+        </li>
+      </ul>
+      <div class="nav-actions">
+        <button class="btn btn-outline-white btn-sm" onclick="alert('Sign in portal — demo')">Sign In</button>
+        <button class="btn btn-white btn-sm" onclick="showPage('accounts')">Open Account</button>
+      </div>
+      <button class="hamburger" id="hamburger" onclick="toggleMobile()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+ 
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobile-menu">
+  <div class="mobile-menu-section">Products</div>
+  <a href="#" onclick="showPage('accounts');toggleMobile()">Accounts</a>
+  <a href="#" onclick="showPage('cards');toggleMobile()">Cards</a>
+  <a href="#" onclick="showPage('loans');toggleMobile()">Loans</a>
+  <a href="#" onclick="showPage('forex');toggleMobile()">Foreign Exchange</a>
+  <a href="#" onclick="showPage('wealth');toggleMobile()">Wealth & Insurance</a>
+  <div class="mobile-menu-section">Services</div>
+  <a href="#" onclick="showPage('ways');toggleMobile()">Ways of Banking</a>
+  <a href="#" onclick="showPage('corporate');toggleMobile()">Corporate & Institutional</a>
+  <div class="mobile-menu-section">Company</div>
+  <a href="#" onclick="showPage('about');toggleMobile()">About Us</a>
+  <div style="padding:20px 16px;border-top:1px solid rgba(255,255,255,0.1);margin-top:16px;display:flex;gap:12px;">
+    <button class="btn btn-outline-white" style="flex:1" onclick="alert('Sign in portal')">Sign In</button>
+    <button class="btn btn-white" style="flex:1;color:var(--navy)">Open Account</button>
+  </div>
+</div>
+ 
+<!-- =============================================
+     PAGE: HOME
+     ============================================= -->
+<div class="page active" id="page-home">
+  <!-- Rates Ticker -->
+  <div class="rates-ticker">
+    <div class="container">
+      <div class="ticker-track">
+        <div class="ticker-item">USD/AED <strong>3.6725</strong> <span class="up">▲ 0.0002</span></div>
+        <div class="ticker-item">EUR/AED <strong>3.9841</strong> <span class="down">▼ 0.0014</span></div>
+        <div class="ticker-item">GBP/AED <strong>4.6320</strong> <span class="up">▲ 0.0089</span></div>
+        <div class="ticker-item">Gold <strong>2,341.50</strong> <span class="up">▲ 12.30</span></div>
+        <div class="ticker-item">EIBOR 3M <strong>5.21%</strong> <span class="down">▼ 0.01</span></div>
+        <div class="ticker-item">USD/AED <strong>3.6725</strong> <span class="up">▲ 0.0002</span></div>
+        <div class="ticker-item">EUR/AED <strong>3.9841</strong> <span class="down">▼ 0.0014</span></div>
+        <div class="ticker-item">GBP/AED <strong>4.6320</strong> <span class="up">▲ 0.0089</span></div>
+        <div class="ticker-item">Gold <strong>2,341.50</strong> <span class="up">▲ 12.30</span></div>
+        <div class="ticker-item">EIBOR 3M <strong>5.21%</strong> <span class="down">▼ 0.01</span></div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- Hero -->
+  <section class="hero home-hero">
+    
+    <div class="container">
+      <div class="hero-content" style="max-width:580px">
+        <div class="hero-eyebrow">Banking Built for South Africa</div>
+        <h1 class="hero-title">
+          Your money.Your control<br><strong>Your future.</strong>
+        </h1>
+        <p class="hero-desc">Summit Bank makes everyday banking simple, secure, and transparent — designed for South Africans who want clarity, 
+            not complexity. Open an account in minutes and manage your money anytime, anywhere with digital-first banking that puts you first.</p>
+        <div class="hero-actions">
+          <button class="btn btn-white btn-lg" onclick="showPage('accounts')" style="color:var(--navy)">Open an Account</button>
+          <button class="btn btn-outline-white btn-lg" onclick="showPage('ways')">Explore Digital Banking</button>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <span class="hero-stat-num" data-count="980000">0</span>
+            <span class="hero-stat-label">Trusted Customers</span>
+          </div>
+          <div>
+            <span class="hero-stat-num" data-count="9">0</span>
+            <span class="hero-stat-label">Provinces</span>
+          </div>
+          <div>
+            <span class="hero-stat-num">ZAR <span data-count="422">0</span>B</span>
+            <span class="hero-stat-label">Total Assets</span>
+          </div>
+          <div>
+            <span class="hero-stat-num" data-count="89">0</span>
+            <span class="hero-stat-label">Branches & ATMs</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Floating card -->
+    <div class="home-hero-card-float" style="position:absolute;bottom:40px;right:8%;display:flex;flex-direction:column;gap:12px;background:rgba(7,36,71,0.6);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.12);padding:20px 24px;min-width:240px;">
+      <div style="font-size:10px;letter-spacing:2px;color:rgba(255,255,255,0.5);text-transform:uppercase">Recent Offers</div>
+      <div style="display:flex;gap:12px;align-items:center">
+        <div style="width:36px;height:36px;background:var(--blue-action);display:flex;align-items:center;justify-content:center;font-size:16px">💳</div>
+        <div>
+          <div style="font-size:12px;color:white;font-weight:600">Up to 10% cashback</div>
+          <div style="font-size:10px;color:rgba(255,255,255,0.5)">On dining & entertainment</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:12px;align-items:center">
+        <div style="width:36px;height:36px;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;font-size:16px">🏠</div>
+        <div>
+          <div style="font-size:12px;color:white;font-weight:600">2.99% Home Finance</div>
+          <div style="font-size:10px;color:rgba(255,255,255,0.5)">Limited time offer</div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- Quick Links Bar -->
+  <div class="quick-links-bar">
+    <div class="container" style="padding:0">
+      <div class="quick-links-inner">
+        <div class="quick-link-item" onclick="showPage('accounts')">
+          <div class="quick-link-icon"><svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></div>
+          <div>
+            <div class="h4 text-navy">Open Account</div>
+            <div class="body-sm text-gray">In minutes, fully digital</div>
+          </div>
+        </div>
+        <div class="quick-link-item" onclick="showPage('loans')">
+          <div class="quick-link-icon"><svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+          <div>
+            <div class="h4 text-navy">Apply for Loan</div>
+            <div class="body-sm text-gray">Get an instant decision</div>
+          </div>
+        </div>
+        <div class="quick-link-item" onclick="showPage('forex')">
+          <div class="quick-link-icon"><svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
+          <div>
+            <div class="h4 text-navy">Foreign Exchange</div>
+            <div class="body-sm text-gray">Live rates, fast transfer</div>
+          </div>
+        </div>
+        <div class="quick-link-item" onclick="showPage('cards')">
+          <div class="quick-link-icon"><svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg></div>
+          <div>
+            <div class="h4 text-navy">Cards</div>
+            <div class="body-sm text-gray">Compare & apply today</div>
+          </div>
+        </div>
+        <div class="quick-link-item" onclick="showPage('ways')">
+          <div class="quick-link-icon"><svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg></div>
+          <div>
+            <div class="h4 text-navy">Mobile Banking</div>
+            <div class="body-sm text-gray">Bank anytime, anywhere</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- Services Section -->
+  <section class="section services-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-eyebrow">Our Services</div>
+        <h2 class="section-title">Everything you need,<br><strong>in one place.</strong></h2>
+        <p class="section-desc">From everyday banking to sophisticated wealth management — discover a complete suite of financial solutions built for the modern world.</p>
+        <div class="section-title-line"></div>
+      </div>
+      <div class="grid-3">
+        <div class="card service-card-wrap reveal delay-1" onclick="showPage('accounts')" style="cursor:pointer">
+          <div class="service-icon">
+            <img src="../icon/user.svg" alt="Accounts Icon">
+          </div>
+
+          <h3 class="h2 text-navy mb-8">Accounts</h3>
+          <p class="body-sm text-gray" style="line-height:1.7">Personal and business accounts designed for your lifestyle. Enjoy zero-fee transactions and premium service.</p>
+          <div class="mt-16"><span class="badge badge-info">Personal</span> <span class="badge badge-info">Business</span></div>
+          <button class="btn btn-ghost mt-16" style="padding-left:0">Explore accounts →</button>
+        </div>
+        <div class="card service-card-wrap reveal delay-2" onclick="showPage('cards')" style="cursor:pointer">
+          <div class="service-icon">
+            <img src="../icon/cards.svg" alt="Cards Icon">
+          </div>
+
+          <h3 class="h2 text-navy mb-8">Cards</h3>
+          <p class="body-sm text-gray" style="line-height:1.7">Earn rewards on every purchase. Unlock exclusive privileges with our Platinum, Gold, and Classic card range.</p>
+          <div class="mt-16"><span class="badge badge-blue">Up to 10% cashback</span></div>
+          <button class="btn btn-ghost mt-16" style="padding-left:0">Explore cards →</button>
+        </div>
+        <div class="card service-card-wrap reveal delay-3" onclick="showPage('loans')" style="cursor:pointer">
+          <div class="service-icon">
+            <img src="../icon/house-line.svg" alt="Loans Icon">
+          </div>
+          <h3 class="h2 text-navy mb-8">Loans</h3>
+          <p class="body-sm text-gray" style="line-height:1.7">Flexible personal loans, home finance, and auto loans with competitive rates and fast approvals.</p>
+          <div class="mt-16"><span class="badge badge-success">Rates from 2.99%</span></div>
+          <button class="btn btn-ghost mt-16" style="padding-left:0">Explore loans →</button>
+        </div>
+        <div class="card service-card-wrap reveal delay-1" onclick="showPage('forex')" style="cursor:pointer">
+          <div class="service-icon">
+            <img src="../icon/coins.svg" alt="Foreign Exchange Icon">
+          </div>
+          <h3 class="h2 text-navy mb-8">Foreign Exchange</h3>
+          <p class="body-sm text-gray" style="line-height:1.7">Access live market rates and transfer money internationally with speed and security.</p>
+          <div class="mt-16"><span class="badge badge-info">140+ Currencies</span></div>
+          <button class="btn btn-ghost mt-16" style="padding-left:0">Explore forex →</button>
+        </div>
+        <div class="card service-card-wrap reveal delay-2" onclick="showPage('wealth')" style="cursor:pointer">
+          <div class="service-icon">
+            <img src="../icon/trend-up.svg" alt="Wealth & Insurance Icon">
+          </div>
+          <h3 class="h2 text-navy mb-8">Wealth & Insurance</h3>
+          <p class="body-sm text-gray" style="line-height:1.7">Grow and protect your assets with expert investment advisory and comprehensive insurance products.</p>
+          <div class="mt-16"><span class="badge badge-info">Private Banking</span></div>
+          <button class="btn btn-ghost mt-16" style="padding-left:0">Explore wealth →</button>
+        </div>
+        <div class="card service-card-wrap reveal delay-3" onclick="showPage('corporate')" style="cursor:pointer">
+          <div class="service-icon">
+            <img src="../icon/bank.svg" alt="Corporate & Institutional Icon">
+          </div>
+          <h3 class="h2 text-navy mb-8">Corporate & Institutional</h3>
+          <p class="body-sm text-gray" style="line-height:1.7">Tailored financial solutions for businesses, government entities, and institutional investors.</p>
+          <div class="mt-16"><span class="badge badge-info">Treasury</span> <span class="badge badge-info">Trade Finance</span></div>
+          <button class="btn btn-ghost mt-16" style="padding-left:0">Explore corporate →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- Promo Banner -->
+  <div class="promo-banner">
+    <div class="container">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap">
+        <div>
+          <div class="section-eyebrow" style="color:var(--cyan)">Limited Offer</div>
+          <h2 style="font-size:28px;font-weight:300;color:white;margin-bottom:12px">Open your account today.<br><strong style="font-weight:700">Zero fees for 12 months.</strong></h2>
+          <p style="color:rgba(255,255,255,0.7);font-size:14px">New customers receive a complimentary year of banking with zero account maintenance fees and free international transfers.</p>
+        </div>
+        <div style="display:flex;gap:12px;flex-shrink:0">
+          <button class="btn btn-white btn-lg" style="color:var(--navy)" onclick="showPage('accounts')">Open Account Now</button>
+          <button class="btn btn-outline-white btn-lg">Learn More</button>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- Awards Strip -->
+  <section class="section-sm bg-light">
+    <div class="container">
+      <div class="text-center mb-32 reveal">
+        <p class="section-eyebrow">Global Recognition</p>
+        <h3 class="h1 text-navy">Award-winning banking excellence</h3>
+      </div>
+      <div class="grid-4 reveal">
+        <div style="text-align:center;padding:24px">
+          <div style="font-size:32px;margin-bottom:12px">🏆</div>
+          <div class="h4 text-navy mb-8">Best Bank UAE 2024</div>
+          <div class="body-sm text-gray">Euromoney Magazine</div>
+        </div>
+        <div style="text-align:center;padding:24px">
+          <div style="font-size:32px;margin-bottom:12px">⭐</div>
+          <div class="h4 text-navy mb-8">Best Digital Bank 2024</div>
+          <div class="body-sm text-gray">Global Finance Awards</div>
+        </div>
+        <div style="text-align:center;padding:24px">
+          <div style="font-size:32px;margin-bottom:12px">🌟</div>
+          <div class="h4 text-navy mb-8">Best Employer MENA</div>
+          <div class="body-sm text-gray">Forbes Middle East</div>
+        </div>
+        <div style="text-align:center;padding:24px">
+          <div style="font-size:32px;margin-bottom:12px">🥇</div>
+          <div class="h4 text-navy mb-8">Top Sustainability Bank</div>
+          <div class="body-sm text-gray">Bloomberg Green 2024</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+ 
+<!-- =============================================
+     PAGE: ACCOUNTS
+     ============================================= -->
+<div class="page" id="page-accounts">
+  <section class="hero accounts-hero">
+    <div class="hero-bg-pattern"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-eyebrow">Accounts</div>
+        <h1 class="hero-title">Banking built<br><strong>around your life.</strong></h1>
+        <p class="hero-desc">Whether you're managing personal finances or running a business, our accounts are designed to give you full control with zero compromise.</p>
+        <div class="hero-actions">
+          <button class="btn btn-white btn-lg" style="color:var(--navy)">Open Account Online</button>
+          <button class="btn btn-outline-white btn-lg">Compare Accounts</button>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <section class="section">
+    <div class="container">
+      <!-- Tabs -->
+      <div class="account-type-tabs">
+        <button class="account-tab active" onclick="switchTab(this,'tab-personal')">Personal Banking</button>
+        <button class="account-tab" onclick="switchTab(this,'tab-business')">Business Banking</button>
+        <button class="account-tab" onclick="switchTab(this,'tab-compare')">Compare All Accounts</button>
+      </div>
+ 
+      <!-- Personal Tab -->
+      <div class="account-panel active" id="tab-personal">
+        <div class="section-header">
+          <h2 class="section-title">Personal <strong>Accounts</strong></h2>
+          <p class="section-desc">Designed for the way you live and transact — from everyday spending to long-term saving.</p>
+        </div>
+        <div class="grid-3">
+          <div class="account-feature-card reveal delay-1">
+            <span class="badge badge-blue mb-12">Most Popular</span>
+            <h3 class="h2 text-navy mb-8">Current Account</h3>
+            <p class="body-sm text-gray mb-16" style="line-height:1.7">Manage daily transactions with free transfers, chequebook, and debit card access.</p>
+            <ul style="margin-bottom:24px">
+              <li style="display:flex;gap:8px;padding:6px 0;font-size:13px;border-bottom:1px solid var(--border)"><span class="check-mark">✓</span> Zero monthly fees</li>
+              <li style="display:flex;gap:8px;padding:6px 0;font-size:13px;border-bottom:1px solid var(--border)"><span class="check-mark">✓</span> Free chequebook</li>
+              <li style="display:flex;gap:8px;padding:6px 0;font-size:13px;border-bottom:1px solid var(--border)"><span class="check-mark">✓</span> Unlimited ATM withdrawals</li>
+              <li style="display:flex;gap:8px;padding:6px 0;font-size:13px"><span class="check-mark">✓</span> Instant digital access</li>
+            </ul>
+            <button class="btn btn-primary" style="width:100%">Open Current Account</button>
+          </div>
+          <div class="account-feature-card reveal delay-2">
+            <span class="badge badge-success mb-12">Up to 3% p.a.</span>
+            <h3 class="h2 text-navy mb-8">Savings Account</h3>
+            <p class="body-sm text-gray mb-16" style="line-height:1.7">Earn competitive interest on your balance while maintaining full liquidity and access.</p>
+            <ul style="margin-bottom:24px">
+              <li style="display:flex;gap:8px;padding:6px 0;font-size:13px;border-bottom:1px solid var(--border)"><span class="check-mark">✓</span> Up to 3% interest p.a.</li>
+              <li style="display:flex;gap:8px;padding:6px 0;font-size:13px;border-bottom:1px solid var(--border)"><span class="check-mark">✓</span> No minimum balance</li>
+              <li style="display:flex;gap:8px;padding:6px 0;font-size:13px;border-bottom:1px solid var(--border)"><span class="check-mark">✓</span> Instant transfers</li>
+              <li style="display:flex;gap:8px;padding:6px 0;font-size:13px"><span class="check-mark">✓</span> Auto-save features</li>
+            </ul>
+            <button class="btn btn-primary" style="width:100%">Open Savings Account</button>
+          </div>
+          <div class="account-feature-card reveal delay-3">
+            <span class="badge badge-warning mb-12">Up to 5.5% p.a.</span>
+            <h3 class="h2 text-navy mb-8">Fixed Deposit</h3>
+            <p class="body-sm text-gray mb-16" style="line-height:1.7">Lock in premium rates for guaranteed returns. Terms from 1 month to 5 years available.</p>
+            <ul style="margin-bottom:24px">
+              <li style="display:flex;gap:8px;padding:6px 0;font-size:13px;border-bottom:1px solid var(--border)"><span class="check-mark">✓</span> Up to 5.5% p.a.</li>
+              <li style="display:flex;gap:8px;padding:6px 0;font-size:13px;border-bottom:1px solid var(--border)"><span class="check-mark">✓</span> Flexible tenures</li>
+              <li style="display:flex;gap:8px;padding:6px 0;font-size:13px;border-bottom:1px solid var(--border)"><span class="check-mark">✓</span> Auto-renewal option</li>
+              <li style="display:flex;gap:8px;padding:6px 0;font-size:13px"><span class="check-mark">✓</span> Guaranteed returns</li>
+            </ul>
+            <button class="btn btn-primary" style="width:100%">Open Fixed Deposit</button>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- Business Tab -->
+      <div class="account-panel" id="tab-business">
+        <div class="section-header">
+          <h2 class="section-title">Business <strong>Accounts</strong></h2>
+          <p class="section-desc">Powerful tools for businesses of all sizes — from startups to large enterprises.</p>
+        </div>
+        <div class="grid-3">
+          <div class="account-feature-card">
+            <span class="badge badge-info mb-12">SME</span>
+            <h3 class="h2 text-navy mb-8">Business Current</h3>
+            <p class="body-sm text-gray mb-16">For small and medium enterprises. Free transactions, payroll management, and dedicated relationship manager.</p>
+            <ul style="margin-bottom:24px">
+              <li style="display:flex;gap:8px;padding:6px 0;font-size:13px;border-bottom:1px solid var(--border)"><span class="check-mark">✓</span> Free online transfers</li>
+              <li style="display:flex;gap:8px;padding:6px 0;font-size:13px;border-bottom:1px solid var(--border)"><span class="check-mark">✓</span> Multi-user access</li>
+              <li style="display:flex;gap:8px;padding:6px 0;font-size:13px"><span class="check-mark">✓</span> Payroll integration</li>
+            </ul>
+            <button class="btn btn-primary" style="width:100%">Apply Now</button>
+          </div>
+          <div class="account-feature-card">
+            <span class="badge badge-blue mb-12">Corporate</span>
+            <h3 class="h2 text-navy mb-8">Corporate Account</h3>
+            <p class="body-sm text-gray mb-16">Advanced treasury solutions for large enterprises with multi-currency capabilities and API banking.</p>
+            <ul style="margin-bottom:24px">
+              <li style="display:flex;gap:8px;padding:6px 0;font-size:13px;border-bottom:1px solid var(--border)"><span class="check-mark">✓</span> Multi-currency</li>
+              <li style="display:flex;gap:8px;padding:6px 0;font-size:13px;border-bottom:1px solid var(--border)"><span class="check-mark">✓</span> API banking access</li>
+              <li style="display:flex;gap:8px;padding:6px 0;font-size:13px"><span class="check-mark">✓</span> 24/7 relationship manager</li>
+            </ul>
+            <button class="btn btn-primary" style="width:100%">Contact Us</button>
+          </div>
+          <div class="card-light">
+            <h3 class="h2 text-navy mb-16">Why businesses choose Summit Bank</h3>
+            <div style="display:flex;flex-direction:column;gap:16px">
+              <div style="display:flex;gap:12px;align-items:flex-start">
+                <div style="width:32px;height:32px;background:var(--blue-action);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:white;font-size:14px">→</div>
+                <div><div class="h4 mb-4">Fast Setup</div><div class="body-sm text-gray">Business account open in 48 hours with digital verification.</div></div>
+              </div>
+              <div style="display:flex;gap:12px;align-items:flex-start">
+                <div style="width:32px;height:32px;background:var(--blue-action);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:white;font-size:14px">→</div>
+                <div><div class="h4 mb-4">Dedicated Support</div><div class="body-sm text-gray">Your own relationship manager available 24/7.</div></div>
+              </div>
+              <div style="display:flex;gap:12px;align-items:flex-start">
+                <div style="width:32px;height:32px;background:var(--blue-action);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:white;font-size:14px">→</div>
+                <div><div class="h4 mb-4">Smart Integrations</div><div class="body-sm text-gray">Connect with 200+ accounting and ERP systems.</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- Compare Tab -->
+      <div class="account-panel" id="tab-compare">
+        <h2 class="section-title mb-32">Compare <strong>All Accounts</strong></h2>
+        <div style="overflow-x:auto">
+          <table class="account-compare-table">
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Current Account</th>
+                <th>Savings Account</th>
+                <th>Fixed Deposit</th>
+                <th>Business Current</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Monthly Fee</td><td>Free</td><td>Free</td><td>Free</td><td> ZAR 250</td></tr>
+              <tr><td>Min. Balance</td><td>ZAR 3,000</td><td>None</td><td>ZAR 10,000</td><td> ZAR 25,000</td></tr>
+              <tr><td>Debit Card</td><td class="check-mark">✓</td><td class="check-mark">✓</td><td class="cross-mark">—</td><td class="check-mark">✓</td></tr>
+              <tr><td>Chequebook</td><td class="check-mark">✓</td><td class="cross-mark">—</td><td class="cross-mark">—</td><td class="check-mark">✓</td></tr>
+              <tr><td>Online Banking</td><td class="check-mark">✓</td><td class="check-mark">✓</td><td class="check-mark">✓</td><td class="check-mark">✓</td></tr>
+              <tr><td>Interest Rate</td><td>—</td><td>Up to 3%</td><td>Up to 5.5%</td><td>—</td></tr>
+              <tr><td>Multi-user Access</td><td class="cross-mark">—</td><td class="cross-mark">—</td><td class="cross-mark">—</td><td class="check-mark">✓</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+ 
+<!-- =============================================
+     PAGE: CARDS
+     ============================================= -->
+<div class="page" id="page-cards">
+  <section class="hero cards-hero">
+    <div class="hero-bg-pattern"></div>
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center" class="hero-content">
+        <div>
+          <div class="hero-eyebrow">Credit & Debit Cards</div>
+          <h1 class="hero-title">Cards that reward<br><strong>every swipe.</strong></h1>
+          <p class="hero-desc">From everyday rewards to elite privileges — find the card that matches your ambition and lifestyle.</p>
+          <div class="hero-actions">
+            <button class="btn btn-white btn-lg" style="color:var(--navy)">Compare Cards</button>
+            <button class="btn btn-outline-white btn-lg">Apply Now</button>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:16px;align-items:center">
+          <div class="credit-card-visual platinum">
+            <div class="card-chip"></div>
+            <div class="card-number">4512 •••• •••• 7831</div>
+            <div class="card-bottom">
+              <div>
+                <div class="card-holder-label">Card Holder</div>
+                <div class="card-holder-name">Muhammad Jali</div>
+              </div>
+              <div class="card-network" style="font-style:italic">Visa</div>
+            </div>
+            <div style="position:absolute;top:20px;right:20px;font-size:10px;letter-spacing:2px;opacity:0.5">PLATINUM</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal text-center">
+        <div class="section-eyebrow">Our Card Range</div>
+        <h2 class="section-title">Choose your <strong>perfect card</strong></h2>
+        <div class="section-title-line" style="display:block;margin:16px auto 0"></div>
+      </div>
+      <div class="grid-3" style="gap:32px">
+        <!-- Platinum -->
+        <div style="border:1px solid var(--border);transition:var(--transition)" class="reveal delay-1">
+          <div class="credit-card-visual platinum" style="border-radius:0;max-width:100%">
+            <div class="card-chip"></div>
+            <div class="card-number">•••• •••• •••• ••••</div>
+            <div class="card-bottom">
+              <div><div class="card-holder-name">PLATINUM CARD</div></div>
+              <div class="card-network" style="font-style:italic">Visa</div>
+            </div>
+          </div>
+          <div style="padding:24px">
+            <div class="flex-between mb-12"><h3 class="h2 text-navy">Infinite Platinum</h3><span class="badge badge-info">Premium</span></div>
+            <p class="body-sm text-gray mb-16">Our most prestigious card. Airport lounge access, premium concierge, and maximum rewards on every purchase.</p>
+            <div class="card-benefits-grid" style="grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:24px">
+              <div class="benefit-tile"><div class="benefit-value">10%</div><div class="benefit-label">Dining cashback</div></div>
+              <div class="benefit-tile"><div class="benefit-value">5%</div><div class="benefit-label">Travel rewards</div></div>
+              <div class="benefit-tile"><div class="benefit-value">∞</div><div class="benefit-label">Lounge access</div></div>
+            </div>
+            <button class="btn btn-primary" style="width:100%">Apply for Platinum</button>
+          </div>
+        </div>
+        <!-- Gold -->
+        <div style="border:2px solid var(--blue-action);position:relative;transition:var(--transition)" class="reveal delay-2">
+          <div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);white-space:nowrap"><span class="badge badge-blue">Most Popular</span></div>
+          <div class="credit-card-visual gold" style="border-radius:0;max-width:100%">
+            <div class="card-chip"></div>
+            <div class="card-number">•••• •••• •••• ••••</div>
+            <div class="card-bottom">
+              <div><div class="card-holder-name">GOLD CARD</div></div>
+              <div class="card-network" style="font-style:italic">Mastercard</div>
+            </div>
+          </div>
+          <div style="padding:24px">
+            <div class="flex-between mb-12"><h3 class="h2 text-navy">World Gold</h3><span class="badge badge-warning">Recommended</span></div>
+            <p class="body-sm text-gray mb-16">Premium rewards for frequent spenders. Points never expire, and you can redeem for travel, shopping, or cashback.</p>
+            <div class="card-benefits-grid" style="grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:24px">
+              <div class="benefit-tile"><div class="benefit-value">7%</div><div class="benefit-label">Dining cashback</div></div>
+              <div class="benefit-tile"><div class="benefit-value">4%</div><div class="benefit-label">Travel rewards</div></div>
+              <div class="benefit-tile"><div class="benefit-value">2×</div><div class="benefit-label">Points on grocery</div></div>
+            </div>
+            <button class="btn btn-primary" style="width:100%">Apply for Gold</button>
+          </div>
+        </div>
+        <!-- Classic -->
+        <div style="border:1px solid var(--border);transition:var(--transition)" class="reveal delay-3">
+          <div class="credit-card-visual classic" style="border-radius:0;max-width:100%">
+            <div class="card-chip"></div>
+            <div class="card-number">•••• •••• •••• ••••</div>
+            <div class="card-bottom">
+              <div><div class="card-holder-name">CLASSIC CARD</div></div>
+              <div class="card-network" style="font-style:italic">Visa</div>
+            </div>
+          </div>
+          <div style="padding:24px">
+            <div class="flex-between mb-12"><h3 class="h2 text-navy">Classic Plus</h3><span class="badge badge-info">Entry Level</span></div>
+            <p class="body-sm text-gray mb-16">Smart everyday card. Earn rewards on all purchases with no annual fee in the first year.</p>
+            <div class="card-benefits-grid" style="grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:24px">
+              <div class="benefit-tile"><div class="benefit-value">3%</div><div class="benefit-label">Dining cashback</div></div>
+              <div class="benefit-tile"><div class="benefit-value">1%</div><div class="benefit-label">All purchases</div></div>
+              <div class="benefit-tile"><div class="benefit-value">0</div><div class="benefit-label">Yr 1 annual fee</div></div>
+            </div>
+            <button class="btn btn-primary" style="width:100%">Apply for Classic</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+ 
+<!-- =============================================
+     PAGE: LOANS
+     ============================================= -->
+<div class="page" id="page-loans">
+  <section class="hero loans-hero">
+    <div class="hero-bg-pattern"></div>
+    <div class="container">
+      <div class="hero-content" style="max-width:560px">
+        <div class="hero-eyebrow">Loans & Finance</div>
+        <h1 class="hero-title">Finance your dreams<br><strong>at the right price.</strong></h1>
+        <p class="hero-desc">Competitive rates, flexible terms, and fast decisions. Whatever you need funding for, we have a loan designed for it.</p>
+        <div class="hero-actions">
+          <button class="btn btn-white btn-lg" style="color:var(--navy)">Check Your Eligibility</button>
+          <button class="btn btn-outline-white btn-lg">Loan Calculator</button>
+        </div>
+        <div class="hero-stats">
+          <div><span class="hero-stat-num">2.99%</span><span class="hero-stat-label">Rates from (p.a.)</span></div>
+          <div><span class="hero-stat-num">24hrs</span><span class="hero-stat-label">Approval time</span></div>
+          <div><span class="hero-stat-num">R550,000</span><span class="hero-stat-label">Max personal loan</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <section class="section">
+    <div class="container">
+      <div class="grid-2" style="gap:48px;align-items:start">
+        <div>
+          <div class="section-header">
+            <div class="section-eyebrow">Loan Types</div>
+            <h2 class="section-title">Find the right<br><strong>loan for you</strong></h2>
+          </div>
+          <div class="loan-types-grid" style="grid-template-columns:1fr 1fr;gap:16px">
+            <div class="loan-type-card reveal delay-1">
+              <div class="service-icon">
+                <img src="../icon/user.svg" alt="User Icon">
+              </div>
+
+              <h3 class="h3 text-navy mb-8">Personal Loan</h3>
+              <div class="loan-rate">2.99% <span>p.a.</span></div>
+              <p class="body-sm text-gray mt-8">Up to R550,000, terms up to 60 months.</p>
+              <button class="btn btn-primary mt-16" style="width:100%;font-size:12px;height:40px">Apply Now</button>
+            </div>
+            <div class="loan-type-card reveal delay-2">
+              <div class="service-icon">
+                <img src="../icon/house-line.svg" alt="House Icon">
+              </div>
+
+              <h3 class="h3 text-navy mb-8">Home Finance</h3>
+              <div class="loan-rate">3.49% <span>p.a.</span></div>
+              <p class="body-sm text-gray mt-8">Up to R1.5M, 25-year tenure.</p>
+              <button class="btn btn-primary mt-16" style="width:100%;font-size:12px;height:40px">Apply Now</button>
+            </div>
+            <div class="loan-type-card reveal delay-3">
+              <div class="service-icon">
+                <img src="../icon/car-profile.svg" alt="Car Icon">
+              </div>
+
+              <h3 class="h3 text-navy mb-8">Auto Finance</h3>
+              <div class="loan-rate">2.79% <span>p.a.</span></div>
+              <p class="body-sm text-gray mt-8">Up to R750,000. Instant pre-approval.</p>
+              <button class="btn btn-primary mt-16" style="width:100%;font-size:12px;height:40px">Apply Now</button>
+            </div>
+            <div class="loan-type-card reveal delay-4">
+              <div class="service-icon">
+                <img src="../icon/bank.svg" alt="Building Icon">
+              </div>
+
+              <h3 class="h3 text-navy mb-8">Business Loan</h3>
+              <div class="loan-rate">4.99% <span>p.a.</span></div>
+              <p class="body-sm text-gray mt-8">Working capital solutions up to R50M.</p>
+              <button class="btn btn-primary mt-16" style="width:100%;font-size:12px;height:40px">Contact Us</button>
+            </div>
+          </div>
+        </div>
+ 
+        <!-- Loan Calculator -->
+        <div>
+          <h2 class="h1 text-navy mb-24">Loan Calculator</h2>
+          <div class="loan-calculator">
+            <div class="form-group">
+              <label class="form-label">Loan Amount (ZAR)</label>
+              <div class="range-wrap">
+                <input type="range" id="loan-amount" min="10000" max="1000000" step="10000" value="200000" oninput="calcLoan()">
+              </div>
+              <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--text-gray)">
+                <span>ZAR 10,000</span>
+                <strong id="loan-amount-val" style="color:var(--navy);font-size:14px">ZAR 200,000</strong>
+                <span>ZAR 1,000,000</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Loan Tenure (Months)</label>
+              <div class="range-wrap">
+                <input type="range" id="loan-term" min="6" max="60" step="6" value="36" oninput="calcLoan()">
+              </div>
+              <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--text-gray)">
+                <span>6 months</span>
+                <strong id="loan-term-val" style="color:var(--navy);font-size:14px">36 months</strong>
+                <span>60 months</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Interest Rate: <strong id="loan-rate-val">2.99%</strong> p.a.</label>
+            </div>
+ 
+            <div class="loan-calc-output">
+              <div class="loan-output-row">
+                <span class="loan-output-label">Monthly Instalment</span>
+                <span class="loan-output-value" id="monthly-payment">ZAR 5,812</span>
+              </div>
+              <div class="loan-output-row">
+                <span class="loan-output-label">Total Repayment</span>
+                <span class="loan-output-value" id="total-payment">ZAR 209,232</span>
+              </div>
+              <div class="loan-output-row">
+                <span class="loan-output-label">Total Interest</span>
+                <span class="loan-output-value" id="total-interest">ZAR 9,232</span>
+              </div>
+            </div>
+            <button class="btn btn-white mt-24" style="width:100%;color:var(--navy)" onclick="alert('Applying for loan — demo')">Apply for This Loan</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+ 
+<!-- =============================================
+     PAGE: FOREX
+     ============================================= -->
+<div class="page" id="page-forex">
+  <section class="hero forex-hero">
+    <div class="hero-bg-pattern"></div>
+    <div class="container">
+      <div class="hero-content" style="max-width:560px">
+        <div class="hero-eyebrow">Foreign Exchange</div>
+        <h1 class="hero-title">Move money across<br><strong>borders, effortlessly.</strong></h1>
+        <p class="hero-desc">Access competitive live rates on 140+ currencies. Transfer internationally with same-day delivery in most corridors.</p>
+        <div class="hero-actions">
+          <button class="btn btn-white btn-lg" style="color:var(--navy)">Transfer Money Now</button>
+          <button class="btn btn-outline-white btn-lg">View All Rates</button>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <section class="section">
+    <div class="container">
+      <div class="grid-2" style="gap:48px;align-items:start">
+        <!-- Converter -->
+        <div>
+          <h2 class="h1 text-navy mb-24">Currency Converter</h2>
+          <div class="forex-converter">
+            <div class="forex-pair">
+              <div>
+                <label class="form-label">From</label>
+                <select class="form-select mb-8" id="from-currency" onchange="convertCurrency()">
+                  <option value="USD">🇺🇸 USD — US Dollar</option>
+                  <option value="EUR">🇪🇺 EUR — Euro</option>
+                  <option value="GBP">🇬🇧 GBP — Pound Sterling</option>
+                  <option value="INR">🇮🇳 INR — Indian Rupee</option>
+                  <option value="SAR">🇸🇦 SAR — Saudi Riyal</option>
+                </select>
+                <input type="number" class="form-input" id="from-amount" value="1000" oninput="convertCurrency()" placeholder="Amount">
+              </div>
+              <div style="display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:0">
+                <button class="swap-btn" onclick="swapCurrencies()" title="Swap currencies">⇄</button>
+              </div>
+              <div>
+                <label class="form-label">To</label>
+                <select class="form-select mb-8" id="to-currency" onchange="convertCurrency()">
+                  <option value="AED" selected>🇦🇪 AED — UAE Dirham</option>
+                  <option value="USD">🇺🇸 USD — US Dollar</option>
+                  <option value="EUR">🇪🇺 EUR — Euro</option>
+                  <option value="GBP">🇬🇧 GBP — Pound Sterling</option>
+                  <option value="INR">🇮🇳 INR — Indian Rupee</option>
+                </select>
+                <input type="text" class="form-input" id="to-amount" value="3,672.50" readonly style="background:var(--bg-light)">
+              </div>
+            </div>
+            <div class="rate-display">
+              <div class="body-sm text-gray mb-8">Exchange Rate</div>
+              <div class="rate-big" id="rate-display">1 USD = 3.6725 AED</div>
+              <div class="body-sm text-gray mt-8">Live rate · Updated 2 min ago</div>
+            </div>
+            <button class="btn btn-primary mt-24" style="width:100%" onclick="alert('Transfer initiated — demo')">Transfer Now</button>
+          </div>
+        </div>
+ 
+        <!-- Rates Table -->
+        <div>
+          <h2 class="h1 text-navy mb-24">Live Rates</h2>
+          <div style="border:1px solid var(--border);overflow:hidden">
+            <table class="rates-table" style="margin:0">
+              <thead>
+                <tr>
+                  <th>Currency</th>
+                  <th>Buy</th>
+                  <th>Sell</th>
+                  <th>Change</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>USD</strong> US Dollar</td><td>3.6710</td><td>3.6740</td><td class="rate-up">+0.01%</td></tr>
+                <tr><td><strong>EUR</strong> Euro</td><td>3.9780</td><td>3.9900</td><td class="rate-down">-0.04%</td></tr>
+                <tr><td><strong>GBP</strong> Pound</td><td>4.6200</td><td>4.6440</td><td class="rate-up">+0.18%</td></tr>
+                <tr><td><strong>INR</strong> Indian Rupee</td><td>0.04401</td><td>0.04432</td><td class="rate-down">-0.02%</td></tr>
+                <tr><td><strong>SAR</strong> Saudi Riyal</td><td>0.9780</td><td>0.9800</td><td>0.00%</td></tr>
+                <tr><td><strong>JPY</strong> Japanese Yen</td><td>0.02418</td><td>0.02430</td><td class="rate-up">+0.31%</td></tr>
+                <tr><td><strong>CNY</strong> Chinese Yuan</td><td>0.5060</td><td>0.5090</td><td class="rate-up">+0.05%</td></tr>
+                <tr><td><strong>CHF</strong> Swiss Franc</td><td>4.0220</td><td>4.0410</td><td class="rate-down">-0.08%</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mt-16"><button class="btn btn-secondary" style="width:100%">View All 140+ Currencies</button></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+ 
+<!-- =============================================
+     PAGE: WEALTH & INSURANCE
+     ============================================= -->
+<div class="page" id="page-wealth">
+  <section class="hero wealth-hero" style="min-height:500px;display:flex;align-items:center">
+    <div class="hero-bg-pattern"></div>
+    <div class="container">
+      <div class="hero-content" style="max-width:600px">
+        <div class="hero-eyebrow">Wealth & Insurance</div>
+        <h1 class="hero-title">Build wealth<br>that <strong>outlasts generations.</strong></h1>
+        <p class="hero-desc">Expert guidance, institutional-grade investments, and comprehensive protection — delivered with the discretion and precision you expect.</p>
+        <div class="hero-actions">
+          <button class="btn btn-white btn-lg" style="color:var(--navy)">Speak to a Wealth Advisor</button>
+          <button class="btn btn-outline-white btn-lg">Explore Solutions</button>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal text-center">
+        <div class="section-eyebrow">Our Wealth Services</div>
+        <h2 class="section-title">A complete ecosystem<br>for <strong>your wealth</strong></h2>
+      </div>
+      <div class="grid-4">
+        <div class="wealth-pillar reveal delay-1">
+          <div class="service-icon">
+              <img src="../icon/suitcase.svg" alt="User Icon">
+          </div>
+
+          <h3 class="h3 text-navy mb-8">Portfolio Management</h3>
+          <p class="body-sm text-gray">Actively managed portfolios tailored to your risk appetite and return objectives.</p>
+        </div>
+        <div class="wealth-pillar reveal delay-2">
+          <div class="service-icon">
+            <img src="../icon/globe-hemisphere-west.svg" alt="Globe Icon">
+          </div>
+
+          <h3 class="h3 text-navy mb-8">Global Investments</h3>
+          <p class="body-sm text-gray">Access to equity, fixed income, alternatives, and real estate across global markets.</p>
+        </div>
+        <div class="wealth-pillar reveal delay-3">
+          <div class="service-icon">
+            <img src="../icon/heartbeat.svg" alt="Heartbeat Icon">
+          </div>
+
+          <h3 class="h3 text-navy mb-8">Insurance Solutions</h3>
+          <p class="body-sm text-gray">Life, health, property, and business protection from leading insurers.</p>
+        </div>
+        <div class="wealth-pillar reveal delay-4">
+          <div class="service-icon">
+            <img src="../icon/house-line.svg" alt="Family Icon">
+          </div>
+          <h3 class="h3 text-navy mb-8">Family Office</h3>
+          <p class="body-sm text-gray">Holistic wealth planning, estate management, and legacy solutions for HNW families.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <section class="section bg-light">
+    <div class="container">
+      <div class="grid-2" style="gap:48px;align-items:center">
+        <div class="reveal-left">
+          <div class="section-eyebrow">Private Banking</div>
+          <h2 class="section-title">Exclusive access.<br><strong>Exceptional service.</strong></h2>
+          <p class="section-desc">Our Private Banking team delivers bespoke financial solutions to clients with AED 1M+ in investable assets. Your dedicated banker, your timeline, your goals.</p>
+          <div style="margin-top:24px;display:flex;flex-direction:column;gap:16px">
+            <div style="display:flex;gap:12px;align-items:flex-start">
+              <div style="width:3px;height:40px;background:var(--blue-action);flex-shrink:0;margin-top:4px"></div>
+              <div><div class="h4 mb-4">Dedicated Relationship Manager</div><div class="body-sm text-gray">Single point of contact for all your banking and investment needs, available 24/7.</div></div>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start">
+              <div style="width:3px;height:40px;background:var(--blue-action);flex-shrink:0;margin-top:4px"></div>
+              <div><div class="h4 mb-4">Priority Execution</div><div class="body-sm text-gray">Skip the queue. All transactions, loans, and requests processed with priority status.</div></div>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start">
+              <div style="width:3px;height:40px;background:var(--blue-action);flex-shrink:0;margin-top:4px"></div>
+              <div><div class="h4 mb-4">Global Investment Access</div><div class="body-sm text-gray">Exclusive IPOs, structured products, and alternative investments unavailable to retail clients.</div></div>
+            </div>
+          </div>
+          <button class="btn btn-primary mt-32">Explore Private Banking</button>
+        </div>
+        <div class="reveal-right">
+          <div class="portfolio-visual">
+            <div class="mb-16" style="font-size:10px;letter-spacing:2px;color:rgba(255,255,255,0.4);text-transform:uppercase">Sample Portfolio Allocation</div>
+            <div style="margin-bottom:20px">
+              <div style="display:flex;justify-content:space-between;font-size:12px;color:rgba(255,255,255,0.7);margin-bottom:6px"><span>Global Equities</span><span>40%</span></div>
+              <div class="portfolio-bar"><div class="portfolio-bar-fill" style="width:40%;background:#2765FF"></div></div>
+            </div>
+            <div style="margin-bottom:20px">
+              <div style="display:flex;justify-content:space-between;font-size:12px;color:rgba(255,255,255,0.7);margin-bottom:6px"><span>Fixed Income</span><span>30%</span></div>
+              <div class="portfolio-bar"><div class="portfolio-bar-fill" style="width:30%;background:#17A2B8"></div></div>
+            </div>
+            <div style="margin-bottom:20px">
+              <div style="display:flex;justify-content:space-between;font-size:12px;color:rgba(255,255,255,0.7);margin-bottom:6px"><span>Real Estate</span><span>20%</span></div>
+              <div class="portfolio-bar"><div class="portfolio-bar-fill" style="width:20%;background:#3498DB"></div></div>
+            </div>
+            <div style="margin-bottom:20px">
+              <div style="display:flex;justify-content:space-between;font-size:12px;color:rgba(255,255,255,0.7);margin-bottom:6px"><span>Alternatives</span><span>10%</span></div>
+              <div class="portfolio-bar"><div class="portfolio-bar-fill" style="width:10%;background:#FFC107"></div></div>
+            </div>
+            <div style="margin-top:24px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.1)">
+              <div style="display:flex;justify-content:space-between">
+                <div><div style="font-size:11px;color:rgba(255,255,255,0.5)">YTD Return</div><div style="font-size:24px;font-weight:300;color:#4ade80">+14.8%</div></div>
+                <div><div style="font-size:11px;color:rgba(255,255,255,0.5)">Sharpe Ratio</div><div style="font-size:24px;font-weight:300;color:white">1.42</div></div>
+                <div><div style="font-size:11px;color:rgba(255,255,255,0.5)">Volatility</div><div style="font-size:24px;font-weight:300;color:white">8.3%</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+ 
+<!-- =============================================
+     PAGE: WAYS OF BANKING
+     ============================================= -->
+<div class="page" id="page-ways">
+  <section class="hero ways-hero">
+    <div class="hero-bg-pattern"></div>
+    <div class="container">
+      <div class="hero-content" style="max-width:560px">
+        <div class="hero-eyebrow">Ways of Banking</div>
+        <h1 class="hero-title">Bank your way,<br><strong>every day.</strong></h1>
+        <p class="hero-desc">Whether you prefer digital, telephone, or in-person — we offer a seamless experience across every channel.</p>
+        <div class="hero-actions">
+          <button class="btn btn-white btn-lg" style="color:var(--navy)">Download Our App</button>
+          <button class="btn btn-outline-white btn-lg">Find a Branch</button>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <section class="section">
+    <div class="container">
+      <div class="section-header text-center reveal">
+        <div class="section-eyebrow">Banking Channels</div>
+        <h2 class="section-title">Every way to <strong>bank with us</strong></h2>
+      </div>
+      <div class="grid-4">
+        <div class="channel-card reveal delay-1">
+          <div class="service-icon">
+            <img src="../icon/device-mobile.svg" alt="Family Icon">
+          </div>
+
+          <h3 class="h3 text-navy mb-8">Mobile App</h3>
+          <p class="body-sm text-gray" style="line-height:1.7">Full banking in your pocket. Transfer, pay, invest, and manage all accounts from one intuitive app.</p>
+          <button class="btn btn-primary mt-16" style="width:100%">Download App</button>
+        </div>
+        <div class="channel-card reveal delay-2">
+          <div class="service-icon">
+            <img src="../icon/laptop.svg" alt="Computer Icon">
+          </div>
+          <h3 class="h3 text-navy mb-8">Online Banking</h3>
+          <p class="body-sm text-gray" style="line-height:1.7">Secure browser-based banking. Access all services, statements, and account management anytime.</p>
+          <button class="btn btn-primary mt-16" style="width:100%">Login Online</button>
+        </div>
+        <div class="channel-card reveal delay-3">
+          <div class="service-icon">
+            <img src="../icon/bank.svg" alt="Branch Icon">
+          </div>
+          <h3 class="h3 text-navy mb-8">Branches</h3>
+          <p class="body-sm text-gray" style="line-height:1.7">Over 230 branches across the UAE. Expert staff ready to assist with complex needs and advice.</p>
+          <button class="btn btn-primary mt-16" style="width:100%">Find Branch</button>
+        </div>
+        <div class="channel-card reveal delay-4">
+          <div class="service-icon">
+            <img src="../icon/phone-call.svg" alt="Phone Icon">
+          </div>
+
+          <h3 class="h3 text-navy mb-8">Phone Banking</h3>
+          <p class="body-sm text-gray" style="line-height:1.7">24/7 dedicated support. Speak to a real person for account queries, card services, and more.</p>
+          <button class="btn btn-primary mt-16" style="width:100%">Call 600 54 0000</button>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <section class="section bg-navy" style="color:white">
+    <div class="container">
+      <div class="grid-2" style="gap:64px;align-items:center">
+        <div>
+          <div class="app-preview">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
+              <div style="font-size:11px;color:rgba(255,255,255,0.4)">Summit Bank</div>
+              <div style="font-size:11px;color:rgba(255,255,255,0.4)">9:41</div>
+            </div>
+            <div class="app-screen">
+              <div style="font-size:11px;color:rgba(255,255,255,0.5);margin-bottom:4px">Total Balance</div>
+              <div class="app-balance">AED 48,320</div>
+              <div class="app-row" style="margin-top:20px">
+                <div class="app-btn">💸 Transfer</div>
+                <div class="app-btn">📱 Pay</div>
+                <div class="app-btn">📈 Invest</div>
+                <div class="app-btn">⚙️ More</div>
+              </div>
+              <div style="margin-top:20px;background:rgba(255,255,255,0.05);padding:12px;border-radius:4px">
+                <div style="font-size:10px;color:rgba(255,255,255,0.4);margin-bottom:8px">RECENT TRANSACTIONS</div>
+                <div style="display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,0.8);padding:4px 0"><span>☕ Starbucks</span><span style="color:#f87171">-AED 28</span></div>
+                <div style="display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,0.8);padding:4px 0"><span>💰 Salary</span><span style="color:#4ade80">+AED 12,000</span></div>
+                <div style="display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,0.8);padding:4px 0"><span>🛒 Carrefour</span><span style="color:#f87171">-AED 147</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="section-eyebrow" style="color:var(--cyan)">Emirates NBD App</div>
+          <h2 style="font-size:32px;font-weight:300;color:white;margin-bottom:16px">The most advanced<br><strong>banking app in the UAE.</strong></h2>
+          <p style="color:rgba(255,255,255,0.7);line-height:1.7;margin-bottom:32px">Rated #1 banking app in the UAE App Store. Manage your entire financial life — accounts, cards, investments, and transfers — with military-grade security.</p>
+          <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:32px">
+            <div style="display:flex;gap:12px;align-items:center"><span style="color:var(--cyan);font-size:20px">✓</span><span style="color:rgba(255,255,255,0.8)">Face ID & biometric authentication</span></div>
+            <div style="display:flex;gap:12px;align-items:center"><span style="color:var(--cyan);font-size:20px">✓</span><span style="color:rgba(255,255,255,0.8)">Instant push notifications</span></div>
+            <div style="display:flex;gap:12px;align-items:center"><span style="color:var(--cyan);font-size:20px">✓</span><span style="color:rgba(255,255,255,0.8)">AI-powered spending insights</span></div>
+            <div style="display:flex;gap:12px;align-items:center"><span style="color:var(--cyan);font-size:20px">✓</span><span style="color:rgba(255,255,255,0.8)">Multi-account dashboard</span></div>
+          </div>
+          <div style="display:flex;gap:12px">
+            <button class="btn btn-white" style="color:var(--navy)">📱 App Store</button>
+            <button class="btn btn-outline-white">🤖 Google Play</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+ 
+<!-- =============================================
+     PAGE: ABOUT US
+     ============================================= -->
+<div class="page" id="page-about">
+  <section class="hero about-hero" style="display:flex;align-items:center">
+    <div class="hero-bg-pattern"></div>
+    <div class="container">
+      <div class="hero-content" style="max-width:640px">
+        <div class="hero-eyebrow">Our Story</div>
+        <h1 class="hero-title">More than a bank.<br><strong>A partner for life.</strong></h1>
+        <p class="hero-desc">Founded in 2012, Summit Bank has grown into one of the largest banking groups in Africa, serving over 980,000 customers across 9 provinces with uncompromising excellence.</p>
+      </div>
+    </div>
+  </section>
+ 
+  <section class="section">
+    <div class="container">
+      <div class="values-grid reveal">
+        <div class="value-item">
+          <div class="value-num" data-count="980000">0</div>
+          <div class="h4 text-navy mt-8">Trusted Customers</div>
+          <div class="body-sm text-gray mt-4">Trusted by individuals and businesses worldwide</div>
+        </div>
+        <div class="value-item">
+          <div class="value-num" data-count="9">0</div>
+          <div class="h4 text-navy mt-8">Provinces</div>
+          <div class="body-sm text-gray mt-4">Global network spanning key financial centres</div>
+        </div>
+        <div class="value-item">
+          <div class="value-num" data-count="2012">0</div>
+          <div class="h4 text-navy mt-8">Founded</div>
+          <div class="body-sm text-gray mt-4">Over 6 years of financial excellence</div>
+        </div>
+        <div class="value-item">
+          <div class="value-num">ZAR 422B</div>
+          <div class="h4 text-navy mt-8">Total Assets</div>
+          <div class="body-sm text-gray mt-4">One of the largest banks in Africa</div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <section class="section bg-light">
+    <div class="container">
+      <div class="section-header text-center reveal">
+        <div class="section-eyebrow">Our Milestones</div>
+        <h2 class="section-title">A history of <strong>purposeful progress</strong></h2>
+      </div>
+      <div style="max-width:800px;margin:0 auto">
+        <div style="display:flex;flex-direction:column;gap:0;position:relative">
+          <div style="position:absolute;left:24px;top:0;bottom:0;width:2px;background:var(--border)"></div>
+          <div class="reveal" style="display:flex;gap:32px;padding:0 0 40px;position:relative">
+            <div style="width:50px;height:50px;background:var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;z-index:1"><span style="color:white;font-size:10px;font-weight:700">2012</span></div>
+            <div><h3 class="h3 text-navy mb-8">Foundation</h3><p class="body-sm text-gray">Summit Bank formed through the merger of Emirates Bank International and National Bank of Dubai, creating the UAE's largest banking group.</p></div>
+          </div>
+          <div class="reveal" style="display:flex;gap:32px;padding:0 0 40px;position:relative">
+            <div style="width:50px;height:50px;background:var(--blue-action);display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;z-index:1"><span style="color:white;font-size:10px;font-weight:700">2013</span></div>
+            <div><h3 class="h3 text-navy mb-8">Regional Expansion</h3><p class="body-sm text-gray">Expanded into Saudi Arabia, Egypt, and other GCC markets, establishing a true pan-regional banking presence.</p></div>
+          </div>
+          <div class="reveal" style="display:flex;gap:32px;padding:0 0 40px;position:relative">
+            <div style="width:50px;height:50px;background:var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;z-index:1"><span style="color:white;font-size:10px;font-weight:700">2017</span></div>
+            <div><h3 class="h3 text-navy mb-8">Digital Transformation</h3><p class="body-sm text-gray">Launched the award-winning mobile banking platform, pioneering digital-first banking experiences in the Middle East.</p></div>
+          </div>
+          <div class="reveal" style="display:flex;gap:32px;padding:0 0 40px;position:relative">
+            <div style="width:50px;height:50px;background:var(--blue-action);display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;z-index:1"><span style="color:white;font-size:10px;font-weight:700">2019</span></div>
+            <div><h3 class="h3 text-navy mb-8">DenizBank Acquisition</h3><p class="body-sm text-gray">Strategic acquisition of DenizBank in Turkey, significantly expanding our international presence and customer base.</p></div>
+          </div>
+          <div class="reveal" style="display:flex;gap:32px;position:relative">
+            <div style="width:50px;height:50px;background:var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;z-index:1"><span style="color:white;font-size:10px;font-weight:700">2024</span></div>
+            <div><h3 class="h3 text-navy mb-8">AI-Powered Banking</h3><p class="body-sm text-gray">Launched ENBD X — our next-generation AI-powered banking platform — setting new global standards for digital financial services.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <section class="section">
+    <div class="container">
+      <div class="section-header text-center reveal">
+        <div class="section-eyebrow">Leadership</div>
+        <h2 class="section-title">Guided by <strong>visionary leaders</strong></h2>
+      </div>
+      <div class="grid-4">
+        <div class="leadership-card reveal delay-1">
+          <div class="leader-avatar">👤</div>
+          <div class="h4 text-navy mb-4">H.H. Sheikh Ahmed bin Saeed Al Maktoum</div>
+          <div class="body-sm text-gray">Chairman</div>
+        </div>
+        <div class="leadership-card reveal delay-2">
+          <div class="leader-avatar">👤</div>
+          <div class="h4 text-navy mb-4">Hesham Abdulla Al Qassim</div>
+          <div class="body-sm text-gray">Vice Chairman & Managing Director</div>
+        </div>
+        <div class="leadership-card reveal delay-3">
+          <div class="leader-avatar">👤</div>
+          <div class="h4 text-navy mb-4">Shayne Nelson</div>
+          <div class="body-sm text-gray">Group Chief Executive Officer</div>
+        </div>
+        <div class="leadership-card reveal delay-4">
+          <div class="leader-avatar">👤</div>
+          <div class="h4 text-navy mb-4">Patrick Sullivan</div>
+          <div class="body-sm text-gray">Deputy Group CEO</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+ 
+<!-- =============================================
+     PAGE: CORPORATE & INSTITUTIONAL
+     ============================================= -->
+<div class="page" id="page-corporate">
+  <section class="hero corp-hero" style="min-height:480px;display:flex;align-items:center">
+    <div class="hero-bg-pattern"></div>
+    <div class="container">
+      <div class="hero-content" style="max-width:600px">
+        <div class="hero-eyebrow">Corporate & Institutional Banking</div>
+        <h1 class="hero-title">Powering the<br><strong>regional economy.</strong></h1>
+        <p class="hero-desc">Comprehensive financial solutions for corporations, financial institutions, governments, and sovereign entities across the MENA region and beyond.</p>
+        <div class="hero-actions">
+          <button class="btn btn-white btn-lg" style="color:var(--navy)">Speak to Our Team</button>
+          <button class="btn btn-outline-white btn-lg">Our Solutions</button>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <section class="section">
+    <div class="container">
+      <div class="grid-2" style="gap:64px">
+        <div>
+          <div class="section-header">
+            <div class="section-eyebrow">Our Solutions</div>
+            <h2 class="section-title">Built for<br><strong>institutional scale</strong></h2>
+          </div>
+          <div>
+            <div class="solution-item reveal delay-1">
+              <div class="solution-num">01</div>
+              <div>
+                <h3 class="h3 text-navy mb-8">Corporate Finance</h3>
+                <p class="body-sm text-gray" style="line-height:1.7">Structured lending, revolving credit facilities, and syndicated loans to support major corporate transactions and capital requirements.</p>
+              </div>
+            </div>
+            <div class="solution-item reveal delay-2">
+              <div class="solution-num">02</div>
+              <div>
+                <h3 class="h3 text-navy mb-8">Trade Finance</h3>
+                <p class="body-sm text-gray" style="line-height:1.7">Letters of credit, guarantees, supply chain finance, and documentary collections supporting UAE's trading ecosystem.</p>
+              </div>
+            </div>
+            <div class="solution-item reveal delay-3">
+              <div class="solution-num">03</div>
+              <div>
+                <h3 class="h3 text-navy mb-8">Treasury & Markets</h3>
+                <p class="body-sm text-gray" style="line-height:1.7">FX hedging, interest rate risk management, commodity derivatives, and capital market solutions for sophisticated institutions.</p>
+              </div>
+            </div>
+            <div class="solution-item reveal delay-4">
+              <div class="solution-num">04</div>
+              <div>
+                <h3 class="h3 text-navy mb-8">Investment Banking</h3>
+                <p class="body-sm text-gray" style="line-height:1.7">M&A advisory, equity and debt capital markets, IPO management, and financial advisory for landmark regional transactions.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+ 
+        <!-- Contact Form -->
+        <div>
+          <h2 class="h1 text-navy mb-24">Speak to Our Corporate Team</h2>
+          <div class="contact-form-card">
+            <div class="form-group">
+              <label class="form-label">Full Name <span class="required">*</span></label>
+              <input type="text" class="form-input" placeholder="e.g. Mohammed Al Rashidi">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Company Name <span class="required">*</span></label>
+              <input type="text" class="form-input" placeholder="e.g. Al Futtaim Group">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Business Email <span class="required">*</span></label>
+              <input type="email" class="form-input" placeholder="you@company.com">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Phone Number</label>
+              <input type="tel" class="form-input" placeholder="+971 50 000 0000">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Nature of Enquiry</label>
+              <select class="form-select">
+                <option>Corporate Finance</option>
+                <option>Trade Finance</option>
+                <option>Treasury & Markets</option>
+                <option>Investment Banking</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Message</label>
+              <textarea class="form-input" rows="3" style="height:auto;resize:vertical" placeholder="Tell us about your requirements..."></textarea>
+            </div>
+            <button class="btn btn-primary" style="width:100%;margin-top:8px" onclick="alert('Enquiry submitted — a relationship manager will contact you within 24 hours.')">Submit Enquiry</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <section class="section bg-light">
+    <div class="container">
+      <div class="section-header text-center reveal">
+        <div class="section-eyebrow">Sectors We Serve</div>
+        <h2 class="section-title">Deep expertise across <strong>every industry</strong></h2>
+      </div>
+      <div class="text-center reveal">
+        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px">
+          <span class="industry-tag">Energy & Utilities</span>
+          <span class="industry-tag">Real Estate & Construction</span>
+          <span class="industry-tag">Retail & Consumer</span>
+          <span class="industry-tag">Healthcare</span>
+          <span class="industry-tag">Technology</span>
+          <span class="industry-tag">Aviation & Transport</span>
+          <span class="industry-tag">Government & Public Sector</span>
+          <span class="industry-tag">Financial Institutions</span>
+          <span class="industry-tag">Manufacturing</span>
+          <span class="industry-tag">Hospitality & Tourism</span>
+          <span class="industry-tag">Telecommunications</span>
+          <span class="industry-tag">Education</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+ 
+<!-- =============================================
+     FOOTER (shared)
+     ============================================= -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="../img/logo1.png" alt="Summit Bank Logo">
+        </div>
+
+        <p>One of the South Africa's largest banking groups, serving over 980,000 customers across 9 provinces with global financial services.</p>
+        <div class="social-links">
+          <a class="social-link" href="#" aria-label="Twitter">𝕏</a>
+          <a class="social-link" href="#" aria-label="LinkedIn">in</a>
+          <a class="social-link" href="#" aria-label="YouTube">▷</a>
+        </div>
+        <div class="footer-awards">
+          <div class="award-badge">Best Bank South Africa 2024</div>
+          <div class="award-badge">Best Digital Bank Africa 2024</div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Personal Banking</h5>
+        <a href="#" onclick="showPage('accounts')">Current Accounts</a>
+        <a href="#" onclick="showPage('accounts')">Savings Accounts</a>
+        <a href="#" onclick="showPage('cards')">Credit Cards</a>
+        <a href="#" onclick="showPage('loans')">Personal Loans</a>
+        <a href="#" onclick="showPage('loans')">Home Finance</a>
+        <a href="#" onclick="showPage('forex')">Foreign Exchange</a>
+      </div>
+      <div class="footer-col">
+        <h5>Business Banking</h5>
+        <a href="#" onclick="showPage('accounts')">Business Accounts</a>
+        <a href="#" onclick="showPage('corporate')">Trade Finance</a>
+        <a href="#" onclick="showPage('corporate')">Corporate Finance</a>
+        <a href="#" onclick="showPage('corporate')">Treasury</a>
+        <a href="#" onclick="showPage('wealth')">Wealth Management</a>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <a href="#" onclick="showPage('about')">About Us</a>
+        <a href="#" onclick="showPage('about')">Leadership</a>
+        <a href="#">Careers</a>
+        <a href="#">Investor Relations</a>
+        <a href="#">Sustainability</a>
+        <a href="#">Press Room</a>
+      </div>
+      <div class="footer-col">
+        <h5>Support</h5>
+        <a href="#">Help Centre</a>
+        <a href="#" onclick="showPage('ways')">Contact Us</a>
+        <a href="#" onclick="showPage('ways')">Find a Branch</a>
+        <a href="#">Security Centre</a>
+        <a href="#">FATCA / CRS</a>
+        <a href="#">Regulatory Info</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="footer-bottom-inner">
+        <p>© 2012 Summit Bank. All rights reserved. Licensed by the <a href="https://www.resbank.co.za/en/home" target="_blank" style="text-decoration: underline;">South African Reserve Bank</a>.</p>
+
+        <div class="footer-bottom-inner">
+        <p>Proudly designed and developed by <a href="https://www.linkedin.com/in/ababalwe-jali-178032354/" target="_blank" style="text-decoration: underline;">Ababalwe Jali</a></p>
+        </div>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Cookie Policy</a>
+          <a href="#">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+ 
+<!-- Scroll to top -->
+<button class="scroll-top" id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top">↑</button>
+ 
+    <script>
+        // =============================================
+        // PAGE ROUTING
+        // =============================================
+        function showPage(id) {
+        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+        const page = document.getElementById('page-' + id);
+        if (page) {
+            page.classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            // Trigger animations for new page
+            setTimeout(triggerReveal, 100);
+            // Update nav active state
+            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+        }
+        }
+        
+        // =============================================
+        // TABS (Accounts page)
+        // =============================================
+        function switchTab(btn, tabId) {
+        const parent = btn.closest('.section') || btn.parentElement.parentElement;
+        parent.querySelectorAll('.account-tab').forEach(t => t.classList.remove('active'));
+        parent.querySelectorAll('.account-panel').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        const tab = document.getElementById(tabId);
+        if (tab) tab.classList.add('active');
+        }
+        
+        // =============================================
+        // MOBILE MENU
+        // =============================================
+        function toggleMobile() {
+        document.getElementById('mobile-menu').classList.toggle('open');
+        const hamburger = document.getElementById('hamburger');
+        hamburger.classList.toggle('open');
+        }
+        
+        // =============================================
+        // SCROLL ANIMATIONS
+        // =============================================
+        const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            // Counter animation
+            const numEl = e.target.querySelector('[data-count]') || (e.target.hasAttribute('data-count') ? e.target : null);
+            if (numEl) animateCounter(numEl);
+            e.target.querySelectorAll('[data-count]').forEach(animateCounter);
+            }
+        });
+        }, { threshold: 0.15 });
+        
+        function triggerReveal() {
+        document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
+            observer.observe(el);
+        });
+        // Portfolio bars
+        document.querySelectorAll('.portfolio-bar-fill').forEach(bar => {
+            observer.observe(bar.parentElement);
+        });
+        }
+        
+        triggerReveal();
+        
+        // =============================================
+        // COUNTER ANIMATION
+        // =============================================
+        function animateCounter(el) {
+        const target = parseInt(el.getAttribute('data-count'));
+        if (isNaN(target)) return;
+        const duration = 1500;
+        const start = performance.now();
+        function update(now) {
+            const progress = Math.min((now - start) / duration, 1);
+            const val = Math.floor(progress * target);
+            el.textContent = val.toLocaleString();
+            if (progress < 1) requestAnimationFrame(update);
+            else el.textContent = target.toLocaleString();
+        }
+        requestAnimationFrame(update);
+        }
+        
+        // =============================================
+        // NAV SCROLL EFFECT
+        // =============================================
+        window.addEventListener('scroll', () => {
+        const nav = document.getElementById('main-nav');
+        const scrollTop = document.getElementById('scroll-top');
+        nav.classList.toggle('scrolled', window.scrollY > 20);
+        scrollTop.classList.toggle('visible', window.scrollY > 400);
+        });
+        
+        // =============================================
+        // LOAN CALCULATOR
+        // =============================================
+        function calcLoan() {
+        const amount = parseFloat(document.getElementById('loan-amount').value);
+        const months = parseInt(document.getElementById('loan-term').value);
+        const rate = 6.98;
+        const monthlyRate = rate / 100 / 12;
+        const payment = amount * monthlyRate * Math.pow(1 + monthlyRate, months) / (Math.pow(1 + monthlyRate, months) - 1);
+        const total = payment * months;
+        const interest = total - amount;
+        
+        document.getElementById('loan-amount-val').textContent = 'ZAR ' + amount.toLocaleString();
+        document.getElementById('loan-term-val').textContent = months + ' months';
+        document.getElementById('loan-rate-val').textContent = rate + '%';
+        document.getElementById('monthly-payment').textContent = 'ZAR ' + payment.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        document.getElementById('total-payment').textContent = 'ZAR ' + total.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        document.getElementById('total-interest').textContent = 'ZAR ' + interest.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        }
+        calcLoan();
+        
+        // =============================================
+        // CURRENCY CONVERTER
+        // =============================================
+        const RATES = {
+        USD: { AED: 3.6725, EUR: 0.9195, GBP: 0.7890, INR: 83.41, SAR: 3.7501 },
+        EUR: { AED: 3.9956, USD: 1.0875, GBP: 0.8580, INR: 90.69, SAR: 4.0801 },
+        GBP: { AED: 4.6559, USD: 1.2673, EUR: 1.1655, INR: 105.72, SAR: 4.7510 },
+        INR: { AED: 0.04404, USD: 0.01199, EUR: 0.01103, GBP: 0.00946, SAR: 0.04500 },
+        SAR: { AED: 0.9793, USD: 0.2667, EUR: 0.2451, GBP: 0.2105, INR: 22.22 },
+        AED: { USD: 0.2723, EUR: 0.2503, GBP: 0.2148, INR: 22.71, SAR: 1.0212 }
+        };
+        
+        function convertCurrency() {
+        const from = document.getElementById('from-currency').value;
+        const to = document.getElementById('to-currency').value;
+        const amount = parseFloat(document.getElementById('from-amount').value) || 0;
+        let rate = 1;
+        if (from !== to) {
+            if (RATES[from] && RATES[from][to]) rate = RATES[from][to];
+            else if (RATES[to] && RATES[to][from]) rate = 1 / RATES[to][from];
+        }
+        const result = (amount * rate).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        document.getElementById('to-amount').value = result;
+        document.getElementById('rate-display').textContent = `1 ${from} = ${rate.toFixed(4)} ${to}`;
+        }
+        
+        function swapCurrencies() {
+        const from = document.getElementById('from-currency');
+        const to = document.getElementById('to-currency');
+        const fromVal = from.value, toVal = to.value;
+        // Rebuild options for swapped values
+        const setSelectVal = (sel, val) => {
+            for (let opt of sel.options) { if (opt.value === val) { opt.selected = true; break; } }
+        };
+        setSelectVal(from, toVal);
+        setSelectVal(to, fromVal);
+        convertCurrency();
+        }
+        
+        // =============================================
+        // HERO COUNTER ON PAGE LOAD
+        // =============================================
+        document.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => {
+            document.querySelectorAll('[data-count]').forEach(el => {
+            const parent = el.closest('.page.active');
+            if (parent) animateCounter(el);
+            });
+        }, 500);
+        });
+    </script>
+
+</body>
+</html>
